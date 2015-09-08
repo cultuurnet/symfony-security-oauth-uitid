@@ -1,0 +1,14 @@
+language: php
+php:
+- 5.5
+- 5.6
+install: composer install
+script: ./vendor/bin/phing test
+after_success: ./vendor/bin/phing report-to-coveralls
+notifications:
+  email:
+    recipients:
+      - nicolas.leroy@cultuurnet.be
+      - jonas@cultuurnet.be
+      - kristof@2dotstwice.be
+    slack: cnet:UzmZZjVck1RNHTyrTSe6NTd9

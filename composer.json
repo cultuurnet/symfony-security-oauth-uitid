@@ -1,0 +1,44 @@
+{
+    "name": "CultuurNet/SymfonySecurityOAuthUitid",
+    "description": "The UiTiD implementation for the SymfonySecurityOAuth component",
+    "type": "library",
+    "license": "Apache-2.0",
+    "authors": [
+      {
+        "name": "Nicolas Leroy",
+        "email": "nicolas.leroy@gmail.com"
+      },
+      {
+        "name": "Jonas Verhaeghe",
+        "email": "Jonas@cultuurnet.be"
+      },
+      {
+        "name": "Kristof Coomans",
+        "email": "kristof@2dotstwice.be"
+      }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "~4.7",
+        "squizlabs/php_codesniffer": "~2.3",
+        "phing/phing": "~2.11",
+        "satooshi/php-coveralls": "~0.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "CultuurNet\\SymfonySecurityOAuthUitid\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "CultuurNet\\SymfonySecurityOAuthUitid\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.x-dev"
+        }
+    }
+}
