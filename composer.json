@@ -1,5 +1,5 @@
 {
-    "name": "CultuurNet/SymfonySecurityOAuthUitid",
+    "name": "cultuurnet/symfony-security-oauth-uitid",
     "description": "The UiTiD implementation for the SymfonySecurityOAuth component",
     "type": "library",
     "license": "Apache-2.0",
