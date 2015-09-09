@@ -10,8 +10,7 @@ namespace CultuurNet\SymfonySecurityOAuthUitid;
 
 use CultuurNet\SymfonySecurityOAuth\Model\ConsumerInterface;
 use CultuurNet\SymfonySecurityOAuth\Model\Provider\ConsumerProviderInterface;
-use CultuurNet\UitidCredentials\Command\GetConsumerCommand;
-use CultuurNet\UitidCredentials\Entities\Consumer;
+use CultuurNet\SymfonySecurityOAuth\Model\Consumer;
 use CultuurNet\UitidCredentials\UitidCredentialsFetcher;
 
 class ConsumerProvider implements ConsumerProviderInterface
@@ -38,16 +37,17 @@ class ConsumerProvider implements ConsumerProviderInterface
 
     /**
      * @param $consumerKey
-     * @return \CultuurNet\SymfonySecurityOAuth\Service\
+     * @return \CultuurNet\SymfonySecurityOAuth\Model\Consumer
      */
     public function getConsumerByKey($consumerKey)
     {
         $uitid_consumer = $this->fetcher->getConsumer($consumerKey);
-        $this->consumer = new Consumer(
-            $uitid_consumer->getKey(),
-            $uitid_consumer->getName(),
-            $uitid_consumer->getName()
-        );
+
+        $this->consumer = new Consumer();
+        $this->consumer->setConsumerKey($uitid_consumer->getKey());
+        $this->consumer->setConsumerSecret($uitid_consumer->getSecret());
+        $this->consumer->setName($uitid_consumer->getName());
+
         return $this->consumer;
     }
 }
