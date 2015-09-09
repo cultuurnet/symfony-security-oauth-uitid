@@ -31,6 +31,10 @@ class ConsumerProvider implements ConsumerProviderInterface
         $this->fetcher = $fetcher;
     }
 
+    /**
+     * @var \CultuurNet\SymfonySecurityOAuth\Model\Consumer
+     */
+    private $consumer;
 
     /**
      * @param $consumerKey
@@ -39,8 +43,11 @@ class ConsumerProvider implements ConsumerProviderInterface
     public function getConsumerByKey($consumerKey)
     {
         $uitid_consumer = $this->fetcher->getConsumer($consumerKey);
-        return $uitid_consumer;
-
-        // TODO: Implement getConsumerByKey() method.
+        $this->consumer = new Consumer(
+            $uitid_consumer->getKey(),
+            $uitid_consumer->getName(),
+            $uitid_consumer->getName()
+        );
+        return $this->consumer;
     }
 }
