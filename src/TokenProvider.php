@@ -11,23 +11,18 @@ namespace CultuurNet\SymfonySecurityOAuthUitid;
 use CultuurNet\SymfonySecurityOAuth\Model\Consumer;
 use CultuurNet\SymfonySecurityOAuth\Model\Provider\TokenProviderInterface;
 use CultuurNet\SymfonySecurityOAuth\Model\Token;
+use CultuurNet\UitidCredentials\UitidCredentialsService;
 
 class TokenProvider implements TokenProviderInterface
 {
     /**
-     * @var \CultuurNet\UitidCredentials\UitidCredentialsFetcher
+     * @var \CultuurNet\UitidCredentials\UitidCredentialsService
      */
     private $fetcher;
 
-    /**
-     * @var \CultuurNet\SymfonySecurityOAuth\Model\TokenInterface
-     */
-    private $accessToken;
-
-    public function __construct($fetcher)
+    public function __construct(UitidCredentialsService $fetcher)
     {
         $this->fetcher = $fetcher;
-        $this->accessToken = new Token();
     }
 
     /**
@@ -54,12 +49,12 @@ class TokenProvider implements TokenProviderInterface
         $consumer->setConsumerSecret($uitid_consumer->getSecret());
 
         $user = new User($uitid_user->getUid(), $uitid_user->getNick(), $uitid_user->getEmail());
+        $accessToken = new Token();
+        $accessToken->setConsumer($consumer);
+        $accessToken->setToken($uitid_token->getToken());
+        $accessToken->setUser($user);
+        $accessToken->setSecret($uitid_token_secret);
 
-        $this->accessToken->setConsumer($consumer);
-        $this->accessToken->setToken($uitid_token->getToken());
-        $this->accessToken->setUser($user);
-        $this->accessToken->setSecret($uitid_token_secret);
-
-        return $this->accessToken;
+        return $accessToken;
     }
 }
