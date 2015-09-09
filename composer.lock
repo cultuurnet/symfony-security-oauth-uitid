@@ -59,12 +59,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/cultuurnet/symfony-security-oauth.git",
-                "reference": "9f8755cd4fe7944704f09c92779643ea2c6e5299"
+                "reference": "ebafa47df8fa1fac4b0eaf27037240a98e10140c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/cultuurnet/symfony-security-oauth/zipball/9f8755cd4fe7944704f09c92779643ea2c6e5299",
-                "reference": "9f8755cd4fe7944704f09c92779643ea2c6e5299",
+                "url": "https://api.github.com/repos/cultuurnet/symfony-security-oauth/zipball/ebafa47df8fa1fac4b0eaf27037240a98e10140c",
+                "reference": "ebafa47df8fa1fac4b0eaf27037240a98e10140c",
                 "shasum": ""
             },
             "require": {
@@ -107,7 +107,7 @@
                 }
             ],
             "description": "Brief description of this PHP library",
-            "time": "2015-09-09 07:38:59"
+            "time": "2015-09-09 07:46:14"
         },
         {
             "name": "cultuurnet/uitid-credentials",
