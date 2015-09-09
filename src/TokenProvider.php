@@ -10,7 +10,7 @@ namespace CultuurNet\SymfonySecurityOAuthUitid;
 
 use CultuurNet\SymfonySecurityOAuth\Model\Consumer;
 use CultuurNet\SymfonySecurityOAuth\Model\Provider\TokenProviderInterface;
-use Symfony\Component\Security\Core\User\User;
+use CultuurNet\SymfonySecurityOAuth\Model\Token;
 
 class TokenProvider implements TokenProviderInterface
 {
@@ -20,13 +20,14 @@ class TokenProvider implements TokenProviderInterface
     private $fetcher;
 
     /**
-     * @var \CultuurNet\SymfonySecurityOAuth\Model\AccessToken
+     * @var \CultuurNet\SymfonySecurityOAuth\Model\TokenInterface
      */
     private $accessToken;
 
     public function __construct($fetcher)
     {
         $this->fetcher = $fetcher;
+        $this->accessToken = new Token();
     }
 
     /**
