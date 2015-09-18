@@ -13,20 +13,6 @@ use CultuurNet\SymfonySecurityOAuth\Model\Provider\NonceProviderInterface;
 
 class NonceProvider implements NonceProviderInterface
 {
-
-    /**
-     * @param $nonce
-     * @param $timestamp
-     * @param  \CultuurNet\SymfonySecurityOAuth\Model\ConsumerInterface $consumer
-     * @return boolean
-     */
-    public function checkNonceAndTimestampUnicity($nonce, $timestamp, ConsumerInterface $consumer)
-    {
-        // TODO: Implement checkNonceAndTimestampUnicity() method.
-        // For now we'll just return true.
-        return true;
-    }
-
     /**
      * @param $nonce
      * @param $timestamp
