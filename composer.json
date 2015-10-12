@@ -18,7 +18,7 @@
       }
     ],
     "require": {
-        "cultuurnet/symfony-security-oauth": "dev-feature/III-413",
+        "cultuurnet/symfony-security-oauth": "~0.1",
         "cultuurnet/uitid-credentials": "~0.1"
     },
     "require-dev": {
