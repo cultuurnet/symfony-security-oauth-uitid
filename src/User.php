@@ -105,6 +105,14 @@ class User implements UserInterface
     }
 
     /**
+     * @return string
+     */
+    public function getEmail()
+    {
+        return $this->email;
+    }
+
+    /**
      * Removes sensitive data from the user.
      *
      * This is important if, at any given point, sensitive information like
